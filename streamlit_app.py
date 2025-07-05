@@ -5,9 +5,23 @@ st.set_page_config(
     layout="centered",
 )
 
-theme = st.sidebar.radio("Выберите тему", ["Светлая", "Тёмная"])
+if "theme_dark" not in st.session_state:
+    st.session_state.theme_dark = False 
 
-if theme == "Тёмная":
+col1, col2 = st.columns([6, 1])
+
+with col1:
+    st.title("❓FAQ")
+with col2:
+    if st.session_state.theme_dark:
+        st.write("выбрана темная тема")
+    else:
+        st.write("выбрана светлая тема")
+
+    theme_toggle = st.checkbox("", value=st.session_state.theme_dark, key="theme_dark")
+
+
+if st.session_state.theme_dark:
     st.markdown("""
     <style>
     body, .stApp {
@@ -38,7 +52,6 @@ else:
     </style>
     """, unsafe_allow_html=True)
 
-st.title("❓FAQ")
 with st.expander("Как пользоваться ботом?", expanded=True):
     st.write("Чтобы пользоваться ботом нужно написать /start, " \
     "затем выбрать действие, которое должен выполнить бот")

@@ -5,6 +5,29 @@ st.set_page_config(
     layout="centered",
 )
 
+st.markdown("""
+<style>
+body {
+    background-color: #222; /* Темный фон */
+    color: #eee; /* Светлый текст */
+}
+.stApp {
+    background-color: #171617; /* Темный фон для всего приложения */
+}
+.stHeading {
+  color: #eee; /* Светлый цвет заголовка */
+}
+.stExpanderHeader {
+  background-color: #333; /* Темный фон заголовка блока */
+  color: #eee;
+}
+.stExpanderContent {
+  background-color: #333; /* Темный фон контента блока */
+  color: #eee;
+}
+</style>
+""", unsafe_allow_html=True)
+
 st.title("❓FAQ")
 with st.expander("Как пользоваться ботом?", expanded=True):
     st.write("Чтобы пользоваться ботом нужно написать /start, " \
@@ -19,4 +42,3 @@ with st.expander("Как сохранить qr-код?", expanded=True):
     '2. Выбрать пункт "сохранить как"\n')
     st.write('С телефона:\n1. Нажать на картинку\n2. Нажать на 3 точки\n' \
     '3. Выбрать пункт "сохранить как')
-    

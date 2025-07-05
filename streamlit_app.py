@@ -5,35 +5,38 @@ st.set_page_config(
     layout="centered",
 )
 
-st.markdown("""
-<style>
-body {
-    background-color: #222 !important; /* Темный фон */
-    color: #eee !important; /* Светлый текст */
-}
-.stApp {
-    background-color: #222 !important; /* Темный фон для всего приложения */
-    
-    z-index: 0;
-}
-.stHeading {
-    color: #eee !important; /* Светлый цвет заголовка */
-}
-.stExpanderHeader {
-    background-color: #333 !important; /* Темный фон заголовка блока */
-    color: #eee !important;
-    position: relative;
-    z-index: 10;
-}
-.stExpanderContent {
-    background-color: #333 !important; /* Темный фон контента блока */
-    color: #eee !important;
-    position: relative;
-    z-index: 5;
-}
-</style>
-""", unsafe_allow_html=True)
+theme = st.sidebar.radio("Выберите тему", ["Светлая", "Тёмная"])
 
+if theme == "Тёмная":
+    st.markdown("""
+    <style>
+    body, .stApp {
+        background-color: #222 !important;
+        color: #eee !important;
+    }
+    .stExpanderHeader, .stExpanderContent {
+        background-color: #333 !important;
+        color: #eee !important;
+        position: relative;
+        z-index: 10;
+    }
+    </style>
+    """, unsafe_allow_html=True)
+else:
+    st.markdown("""
+    <style>
+    body, .stApp {
+        background-color: white !important;
+        color: black !important;
+    }
+    .stExpanderHeader, .stExpanderContent {
+        background-color: #f0f0f0 !important;
+        color: black !important;
+        position: relative;
+        z-index: 10;
+    }
+    </style>
+    """, unsafe_allow_html=True)
 
 st.title("❓FAQ")
 with st.expander("Как пользоваться ботом?", expanded=True):

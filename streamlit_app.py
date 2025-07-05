@@ -8,28 +8,32 @@ st.set_page_config(
 st.markdown("""
 <style>
 body {
-    background-color: #222;  /* Темный фон */
-    color: #eee; /* Светлый текст */
+    background-color: #222 !important; /* Темный фон */
+    color: #eee !important; /* Светлый текст */
 }
 .stApp {
-    background-color: #222; /* Темный фон для всего приложения */
+    background-color: #222 !important; /* Темный фон для всего приложения */
+    
     z-index: 0;
 }
 .stHeading {
-  color: #eee; /* Светлый цвет заголовка */
+    color: #eee !important; /* Светлый цвет заголовка */
 }
 .stExpanderHeader {
-  background-color: #333; /* Темный фон заголовка блока */
-  color: #eee;
-  z-index: 10; 
+    background-color: #333 !important; /* Темный фон заголовка блока */
+    color: #eee !important;
+    position: relative;
+    z-index: 10;
 }
 .stExpanderContent {
-  background-color: #333;
-  color: #eee; /* Темный фон контента блока */
-  z-index: 5; 
+    background-color: #333 !important; /* Темный фон контента блока */
+    color: #eee !important;
+    position: relative;
+    z-index: 5;
 }
 </style>
 """, unsafe_allow_html=True)
+
 
 st.title("❓FAQ")
 with st.expander("Как пользоваться ботом?", expanded=True):

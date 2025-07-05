@@ -12,7 +12,7 @@ body {
     color: #eee; /* Светлый текст */
 }
 .stApp {
-    background-color: #171617; /* Темный фон для всего приложения */
+    background-color: #222; /* Темный фон для всего приложения */
 }
 .stHeading {
   color: #eee; /* Светлый цвет заголовка */

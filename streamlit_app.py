@@ -8,24 +8,25 @@ st.set_page_config(
 st.markdown("""
 <style>
 body {
-    background-color: #222;
-    color: #eee;
+    background-color: #222;  /* Темный фон */
+    color: #eee; /* Светлый текст */
 }
 .stApp {
-    background-color: #222;
+    background-color: #222; /* Темный фон для всего приложения */
+    z-index: 0;
 }
 .stHeading {
-  color: #eee;
+  color: #eee; /* Светлый цвет заголовка */
 }
 .stExpanderHeader {
-  background-color: #333;
+  background-color: #333; /* Темный фон заголовка блока */
   color: #eee;
-  z-index: 10; /* Важно: устанавливаем z-index */
+  z-index: 10; 
 }
 .stExpanderContent {
   background-color: #333;
-  color: #eee;
-  z-index: 10; /* Важно: устанавливаем z-index */
+  color: #eee; /* Темный фон контента блока */
+  z-index: 5; 
 }
 </style>
 """, unsafe_allow_html=True)
